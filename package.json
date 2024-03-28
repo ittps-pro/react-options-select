@@ -4,12 +4,14 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "5.3.5",
-    "@types/react": "18.2.73",
-    "@types/react-dom": "18.2.22",
-    "antd": "5.15.4",
+    "@ant-design/pro-components": "^2.7.0",
+    "@types/react": "^18.2.73",
+    "@types/react-dom": "^18.2.23",
+    "antd": "^5.15.4",
     "axios": "^1.6.8",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "swr": "^2.2.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,6 +20,12 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-scripts": "latest"
-  }
+    "@types/node": "^20.11.30",
+    "react-scripts": "^5.0.1",
+    "typescript": "^5.4.3"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/ittps-pro/react-options-select.git",
+  "author": "ittps.pro <147715086+ittps-pro@users.noreply.github.com>",
+  "license": "MIT"
 }
