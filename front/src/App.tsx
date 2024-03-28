@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { App, Select } from "antd";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const onChange = (value: string) => {
+  console.log(`selected ${value}`);
+};
 
-export default App;
+const onSearch = (value: string) => {
+  console.log("search:", value);
+};
+
+// Filter `option.label` match the user type `input`
+const filterOption = (
+  input: string,
+  option?: { label: string; value: string },
+) => (option?.label ?? "").toLowerCase().includes(input.toLowerCase());
+
+const AppC: React.FC = () => (
+  <>
+    <Select
+      showSearch
+      placeholder="Select a person"
+      optionFilterProp="children"
+      onChange={onChange}
+      onSearch={onSearch}
+      filterOption={filterOption}
+      options={[
+        {
+          value: "jack",
+          label: "Jack",
+        },
+        {
+          value: "lucy",
+          label: "Lucy",
+        },
+        {
+          value: "tom",
+          label: "Tom",
+        },
+      ]}
+    />
+  </>
+);
+
+export default AppC;
