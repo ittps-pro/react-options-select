@@ -1,39 +1,42 @@
-import React from 'react';
-import './index.css';
-import { Select } from 'antd';
+"useClient";
+import React from "react";
+import "./index.css";
+import { Select } from "antd";
 
 const onChange = (value: string) => {
   console.log(`selected ${value}`);
 };
 
 const onSearch = (value: string) => {
-  console.log('search:', value);
+  console.log("search:", value);
 };
 
 // Filter `option.label` match the user type `input`
-const filterOption = (input: string, option?: { label: string; value: string }) =>
-  (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
+const filterOption = (
+  input: string,
+  option?: { label: string; value: string },
+) => (option?.label ?? "").toLowerCase().includes(input.toLowerCase());
 
-const App: React.FC = () => (
+const SelectOS: React.FC = () => (
   <Select
     showSearch
-    placeholder="Select a person"
+    placeholder="Select a OS version"
     optionFilterProp="children"
     onChange={onChange}
     onSearch={onSearch}
     filterOption={filterOption}
     options={[
       {
-        value: 'jack',
-        label: 'Jack',
+        value: "win10",
+        label: "Windows 10",
       },
       {
-        value: 'lucy',
-        label: 'Lucy',
+        value: "Windows 8.1",
+        label: "Windows 8.1",
       },
       {
-        value: 'tom',
-        label: 'Tom',
+        value: "Windows 7",
+        label: "Windows 7",
       },
     ]}
   />

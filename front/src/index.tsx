@@ -9,11 +9,10 @@ import { App, ConfigProvider } from "antd";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
-
 root.render(
-  <App>
+  <ConfigProvider theme={{ token: { colorPrimary: "#00b96b" } }}>
     <AppC />
-  </App>,
+  </ConfigProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
